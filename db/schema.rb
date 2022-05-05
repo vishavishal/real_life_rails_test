@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2022_05_03_025935) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "films", id: false, force: :cascade do |t|
+    t.serial "id", null: false
+    t.text "name"
+    t.date "release_date"
+  end
+
   create_table "words", force: :cascade do |t|
     t.string "value"
     t.string "language"
